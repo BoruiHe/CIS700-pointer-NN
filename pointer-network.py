@@ -18,7 +18,7 @@ class PointerNet(nn.Module):
         self.output_size = output_size
         self.num_layers = num_layers
         self.dict_size = dict_size
-        self.embedding = nn.Embedding(self.dict_size,self.embed_size) # sequence 0~9,"<pad>" = 11 ,"<EOS>" = 12
+        self.embedding = nn.Embedding(self.dict_size,self.embed_size) 
         self.Encoder = nn.LSTM(self.embed_size,self.hidden_size,self.num_layers,batch_first=True)
         self.Decoder = nn.LSTMCell(self.hidden_size,self.hidden_size)
         self.W1 = nn.Linear(self.hidden_size,self.weight_size) # bias  is False
