@@ -1,3 +1,5 @@
+## Refercenced by https://github.com/jojonki/Pointer-Networks
+
 import numpy as np
 import torch
 import torch.nn as nn
@@ -7,7 +9,7 @@ from torch.autograd import Variable
 
 class PointerNet(nn.Module):
 
-    def __init__(self, input_size, embed_size, hidden_size, weight_size, output_size, num_layers):
+    def __init__(self, input_size, embed_size, hidden_size, weight_size, output_size, num_layers, dict_size):
         super(PointerNet, self).__init__()
         self.input_size = input_size
         self.embed_size = embed_size
@@ -15,7 +17,8 @@ class PointerNet(nn.Module):
         self.weight_size = weight_size
         self.output_size = output_size
         self.num_layers = num_layers
-        self.embedding = nn.Embedding(13,self.embed_size) # sequence 0~9,"<pad>" = 11 ,"<EOS>" = 12
+        self.dict_size = dict_size
+        self.embedding = nn.Embedding(self.dict_size,self.embed_size) # sequence 0~9,"<pad>" = 11 ,"<EOS>" = 12
         self.Encoder = nn.LSTM(self.embed_size,self.hidden_size,self.num_layers,batch_first=True)
         self.Decoder = nn.LSTMCell(self.hidden_size,self.hidden_size)
         self.W1 = nn.Linear(self.hidden_size,self.weight_size) # bias  is False
