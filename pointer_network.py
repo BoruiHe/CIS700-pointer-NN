@@ -45,7 +45,7 @@ class PointerNet(nn.Module):
 
         pred = []
         for i in range(self.output_size):
-            dh,dc = self.Decoder(out_0,(dh,dc)) #dh size:[samples_num,hidden_size]
+            dh,dc = self.Decoder(dh,(dh,dc)) #dh size:[samples_num,hidden_size]
             u = F.tanh(self.W1(out_e) + self.W2(dh)) # [input_size,samples_num,weight] + [samples_num,weight]
             out_s = self.v(u).squeeze()  ## size: [input_size,samples_num]
             out_s = F.log_softmax(out_s.transpose(0,1),1)   # size: [samples_num,input_size]
