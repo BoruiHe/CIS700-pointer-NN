@@ -57,6 +57,5 @@ We can't always get the same results because of its random initialization of the
 #### For "Set operations" task(Jiaming):
 
 1. Download the ZIP file and unzip it. The extracted directory is named `CIS700-pointer-NN-master`. 
-2. Change directory to `./Finding endpoints(dxu123)/`. 
-3. This task also depends on `pointer_network.py` in the parent directory. So you should set the parent directory as the "source root" first. 
-4. Just run the file `train.py`. 
+2. Change directory to `./Pro(Jiaming)/`. 
+3. Just run the file `training.py`. 
