@@ -1,3 +1,4 @@
+#https://stackoverflow.com/questions/49201236/check-the-total-number-of-parameters-in-a-pytorch-model get_trainable_number function
 from torch import optim
 from generate_data import Dataset
 from torch.autograd import  Variable
