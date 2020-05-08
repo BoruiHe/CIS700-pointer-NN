@@ -18,7 +18,7 @@ os.environ['KMP_DUPLICATE_LIB_OK']='True'
 
 class Running:
 
-    def __init__(self,input_size=8,output_size=12,hidden_size=256,weight_size=128,samples_num=80):
+    def __init__(self,input_size=8,output_size=12,hidden_size=256,weight_size=128,samples_num=60):
         self.input_size = input_size
         self.embed_size = 64
         self.hidden_size = hidden_size
