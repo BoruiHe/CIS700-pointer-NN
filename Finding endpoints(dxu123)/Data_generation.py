@@ -3,14 +3,15 @@ from tqdm import tqdm
 
 class Dataset:
 
-    def __init__(self,data_size,maximum_output,seqlength=6):
+    def __init__(self,data_size,maximum_output,seqlength=6,seed=10):
         self.datasize = data_size
         self.seqlength = np.arange(seqlength+1)[5:]
         self.maxoutput = maximum_output
+        self.seed = seed
 
     def Create_lists(self,n):
         dataset = []
-        np.random.seed(10)
+        np.random.seed(self.seed)
         for i in range(self.datasize):
             dataset.append(np.random.randint(0,10,size = n).tolist())
         return dataset

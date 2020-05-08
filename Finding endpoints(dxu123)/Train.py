@@ -18,7 +18,7 @@ os.environ['KMP_DUPLICATE_LIB_OK']='True'
 
 class Running:
 
-    def __init__(self,input_size=8,output_size=12,hidden_size=256,weight_size=128,samples_num=60):
+    def __init__(self,input_size=8,output_size=12,hidden_size=256,weight_size=128,samples_num=80):
         self.input_size = input_size
         self.embed_size = 64
         self.hidden_size = hidden_size
@@ -49,7 +49,7 @@ class Running:
         self.xs_test = xlist[boundary:]
         self.ys_test = ylist[boundary:]
         # For different size samples
-        data2 = Dataset(int(0.1*self.samples_num),self.output_size,self.output_size-2)
+        data2 = Dataset(int(0.2*self.samples_num),self.output_size,self.output_size-2,seed=8)
         xx_list,yy_list = data2.generatedata()
         self.xd_test = Variable(torch.LongTensor(xx_list))
         self.yd_test = Variable(torch.LongTensor(yy_list))
@@ -137,7 +137,7 @@ def main():
     for hid in hidden_size:
         for seq in seq_length:
             print("sequence length: ",seq,"  ", "hidden layer sizes: ",hid )
-            newnet = Running(input_size=seq,output_size=seq+6,hidden_size=hid)
+            newnet = Running(input_size=seq,output_size=seq+4,hidden_size=hid)
             newnet.importdata()
             print("--------Training---------")
             newnet.train(batch)
