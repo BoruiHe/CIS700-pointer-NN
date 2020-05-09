@@ -56,5 +56,5 @@ We can't always get the same results because of its random initialization of the
 #### For "Set operations" task(Jiaming):
 
 1. Download the ZIP file and unzip it. The extracted directory is named `CIS700-pointer-NN-master`. 
-2. Change directory to `./Pro(Jiaming)/`. 
+2. Change directory to `./Set operations(jzhan252)/`. 
 3. Just run the file `training.py`. 
