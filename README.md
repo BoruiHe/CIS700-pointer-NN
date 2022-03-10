@@ -41,7 +41,7 @@ We can't always get the same results because of its random initialization of the
 
 1. All the necessary code is under the same directory Finding unique elements`(Borui He)/`. Do not use any file under parent directory instead.
 2. Download ZIP file and unzip the directory Finding unique elements `(Borui He)/` to your desktop.
-3. Open the "main.py" file and run it.
+3. Open the "train.py" file and run it.
 
 
 
